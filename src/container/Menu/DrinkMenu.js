@@ -44,9 +44,9 @@ const DrinkMenu = () => {
             {/*vineBeer.map((item) => (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
             ))*/}
-            {drink && drink.map((item, index) => {
+            {drink.map((item) => {
                         return (
-                            <div key={index}>
+                            <div key={item.id}>
                                 <p>{item.name}</p>
                                 <p>{item.ingredients}</p>
                                 <p>{item.price}</p>
