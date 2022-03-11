@@ -17,7 +17,7 @@ const DrinkMenu = () => {
   }, [])
   
   const getVineBeer = async () => {
-    const response = await axios.get("https://admingottugg.azurewebsites.net/api/vinebeerapi");
+    const response = await axios.get("/vinebeerapi");
     if(response.status === 200) {
       setVineBeer(response.data);
       console.log(vineBeer);
