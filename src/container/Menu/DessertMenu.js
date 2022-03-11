@@ -41,11 +41,9 @@ const DessertMenu = () => {
       <div className="Menu-wine">
         <p className='Menu-heading'>Kaffe</p>
         <div className="Menu-items">
-        {Coffee && Coffee.map((item) => {
-              return (
+        {Coffee.map((item) => (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-              )
-              })}
+                ))}
         </div>
       </div>
 
@@ -56,11 +54,9 @@ const DessertMenu = () => {
       <div className="Menu-cocktails">
         <p className='Menu-heading'>Efterrätter</p>
         <div className="Menu-items">
-        {Dessert && Dessert.map((item) => {
-              return (
+        {Dessert.map((item) => (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-              )
-              })}
+                ))}
         </div>
       </div>
 

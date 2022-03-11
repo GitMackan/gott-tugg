@@ -9,15 +9,24 @@ import './DrinkMenu.css';
 
 const MainCourseMenu = () => {
   const [mainCourse, setMainCourse] = useState([]);
+  const [mainCourseVeg, setMainCourseVeg] = useState([]);
 
   useEffect(() => {
     getMainCourses();
+    getMainCoursesVeg();
   }, [])
 
   const getMainCourses = async () => {
     const response = await axios.get("/api/maincourseapi");
     if(response.status === 200) {
       setMainCourse(response.data);
+    }
+  }; 
+
+  const getMainCoursesVeg = async () => {
+    const response = await axios.get("/api/maincoursevegapi");
+    if(response.status === 200) {
+      setMainCourseVeg(response.data);
     }
   }; 
 
@@ -32,11 +41,9 @@ const MainCourseMenu = () => {
       <div className="Menu-wine">
         <p className='Menu-heading'>Kött & Fisk</p>
         <div className="Menu-items">
-        {mainCourse && mainCourse.map((item) => {
-              return (
+        {mainCourse.map((item) => (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-              )
-              })}
+                ))}
         </div>
       </div>
 
@@ -47,11 +54,9 @@ const MainCourseMenu = () => {
       <div className="Menu-cocktails">
         <p className='Menu-heading'>Vegetarisk</p>
         <div className="Menu-items">
-        {mainCourse && mainCourse.map((item) => {
-              return (
+        {mainCourseVeg.map((item) => (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-              )
-              })}
+                ))}
         </div>
       </div>
 

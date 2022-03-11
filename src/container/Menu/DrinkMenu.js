@@ -17,14 +17,14 @@ const DrinkMenu = () => {
   }, [])
 
   const getVineBeer = async () => {
-    const response = await axios.get("https://admingottugg.azurewebsites.net/api/vinebeerapi");
+    const response = await axios.get("/api/vinebeerapi");
     if(response.status === 200) {
       setVineBeer(response.data);
     }
   };
 
   const getDrinks = async () => {
-    const response = await axios.get("https://admingottugg.azurewebsites.net/api/drinkapi");
+    const response = await axios.get("/api/drinkapi");
     if(response.status === 200) {
       setDrink(response.data);
     }

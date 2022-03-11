@@ -8,16 +8,25 @@ import './DrinkMenu.css';
 
 
 const StarterMenu = () => {
-  const [mainCourse, setMainCourse] = useState([]);
+  const [starter, setStarter] = useState([]);
+  const [appetizer, setAppetizer] = useState([]);
 
   useEffect(() => {
-    getMainCourses();
+    getStarters();
+    getAppetizer();
   }, [])
 
-  const getMainCourses = async () => {
-    const response = await axios.get("/api/maincourseapi");
+  const getAppetizer = async () => {
+    const response = await axios.get("/api/appetizerapi");
     if(response.status === 200) {
-      setMainCourse(response.data);
+      setAppetizer(response.data);
+    }
+  }; 
+
+  const getStarters = async () => {
+    const response = await axios.get("/api/starterapi");
+    if(response.status === 200) {
+      setStarter(response.data);
     }
   }; 
 
@@ -32,11 +41,9 @@ const StarterMenu = () => {
       <div className="Menu-wine">
         <p className='Menu-heading'>Aptitretare</p>
         <div className="Menu-items">
-        {mainCourse && mainCourse.map((item) => {
-              return (
+        {appetizer.map((item) => (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-              )
-              })}
+                ))}
         </div>
       </div>
 
@@ -47,11 +54,9 @@ const StarterMenu = () => {
       <div className="Menu-cocktails">
         <p className='Menu-heading'>Förätter</p>
         <div className="Menu-items">
-        {mainCourse && mainCourse.map((item) => {
-              return (
+        {starter.map((item) => (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-              )
-              })}
+                ))}
         </div>
       </div>
 
