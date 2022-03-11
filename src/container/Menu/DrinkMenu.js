@@ -9,10 +9,19 @@ const DrinkMenu = () => {
 
   
   const [drink, setDrink] = useState([]);
+  const [vineBeer, setVineBeer] = useState([]);
 
   useEffect(() => {
     getDrinks();
+    getVineBeer();
   }, [])
+
+  const getVineBeer = async () => {
+    const response = await axios.get("/api/vinebeerapi");
+    if(response.status === 200) {
+      setVineBeer(response.data);
+    }
+  };
 
   const getDrinks = async () => {
     const response = await axios.get("/api/drinkapi");
@@ -32,7 +41,7 @@ const DrinkMenu = () => {
         <div className="Menu-wine">
           <p className='Menu-heading'>Vin & Öl</p>
           <div className="Menu-items">
-            {drink && drink.map((item) => {
+            {vineBeer && vineBeer.map((item) => {
               return (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
               )
