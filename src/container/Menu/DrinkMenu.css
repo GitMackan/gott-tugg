@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+.Menu {
+    flex-direction: column;
+    background: var(--color-black);
+    font-family: 'Playfair Display', serif;
+    padding: 15vh 6rem 4rem 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Menu-title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.Menu-title h1 {
+    color: rgb(214, 207, 146);
+    font-size: 64px;
+    line-height: 83.2px;
+    letter-spacing: 0.04em;
+}
+
+.Menu-title h3 {
+    color: white;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.Menu-menu {
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.Menu-heading {
+    font-family: var(--font-base);
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 58.5px;
+    letter-spacing: 0.04em;
+    color: var(--color-white);
+}
+
+.Menu-wine,
+.Menu-cocktails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+}
+
+.Menu-img {
+    width: 510px;
+    margin: 0 2rem;
+    margin-top: 8em;
+}
+
+.Menu-img img {
+    width: 100%;
+}
+
+.Menu-items {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 1150px) {
+    .Menu-menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .Menu-img {
+        margin: 3rem 0;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .Menu {
+        padding: 15vh 4rem 0 4rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .Menu {
+        padding: 15vh 2rem 0 2rem;
+    }
+    .Menu-img {
+        width: 100%;
+    }
+    .Menu-heading {
+        font-size: 35px;
+        line-height: 48.5px;
+    }
+    .Menu-img img {
+        height: auto;
+    }
+    .Menu-img {
+        width: 100%;
+        margin: 0;
+        margin-top: 8em;
+    }
+    .Menu-img img {
+        width: 100%;
+    }
+    .Menu-title h1 {
+        font-size: 45px;
+        line-height: 70px;
+    }
+}

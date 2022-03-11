@@ -1,0 +1,10 @@
+@media screen and (max-width: 650px) {
+    .app__drinkMenu-menu_img {
+        width: 100%;
+        margin: 0 2rem;
+        margin-top: 8em;
+    }
+    .app__drinkMenu-menu_img img {
+        width: 100%;
+    }
+}

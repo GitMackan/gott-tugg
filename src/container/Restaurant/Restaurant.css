@@ -1,0 +1,106 @@
+.restaurant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15vh 6rem 4rem 6rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.restaurant-info {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.restaurant-info h1 {
+    color: rgb(0, 0, 0);
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.restaurant-img {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.restaurant-img-reverse {
+    justify-content: flex-start;
+    margin-right: 2rem;
+}
+
+.restaurant-img img {
+    width: 80%;
+}
+
+.restaurant-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.restaurant-content p {
+    color: black;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    line-height: 28px;
+    font-size: 1.2em;
+}
+
+.restaurant-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.restaurant-text img {
+    width: 47px;
+    height: 40px;
+    margin: 0 1rem 1rem 0;
+}
+
+@media screen and (max-width: 1150px) {
+    .restaurant {
+        flex-direction: column;
+    }
+    .restaurant-img {
+        margin: 5rem 0 0 0;
+    }
+    .restaurant-img-reverse {
+        margin: 0 0 5rem 0;
+    }
+    .restaurant-img img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .restaurant {
+        padding: 15vh 4rem 0 4rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .restaurant {
+        padding: 15vh 2rem 3em 2rem;
+    }
+    .restaurant-content p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .app__chef-sign img {
+        width: 80%;
+    }
+}

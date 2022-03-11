@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+.about {
+    padding-top: 10vh;
+}
+
+.about-restaurant,
+.time {
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.2em;
+    gap: 2em;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    background: rgb(250, 250, 250);
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.time {
+    margin-bottom: 10vh;
+}
+
+.info-left,
+.time-right {
+    padding: 2em;
+}
+
+.info-right img,
+.time-left img {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 0 20px 20px 0;
+}
+
+.info-left p,
+.time-right p {
+    width: 100%;
+    line-height: 1.4em;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+}
+
+.time-left img {
+    border-radius: 20px 0 0 20px;
+    object-position: right;
+}
+
+.time-right p {
+    margin-bottom: .5em;
+}
+
+.about-restaurant p,
+.time p {
+    font-family: var(--font-base);
+}
+
+@media screen and (max-width: 2000px) {}
+
+@media screen and (max-width: 900px) {
+    .about-restaurant,
+    .time {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        font-size: 1.2em;
+        gap: 2em;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+        background: rgb(250, 250, 250);
+        border-radius: 20px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+    .about-restaurant p,
+    .time p {
+        width: 100%;
+        font-family: var(--font-base);
+    }
+    .info-right img {
+        object-position: left;
+        border-radius: 0 0 20px 20px;
+    }
+    .time-left img {
+        object-position: left;
+        border-radius: 20px 20px 0 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .info-left,
+    .time-right {
+        padding: 1em;
+    }
+    p {
+        font-size: 14px;
+    }
+}
