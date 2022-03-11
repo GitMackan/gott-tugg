@@ -17,14 +17,14 @@ const DrinkMenu = () => {
   }, [])
 
   const getVineBeer = async () => {
-    const response = await axios.get("/api/vinebeerapi");
+    const response = await axios.get("https://admingottugg.azurewebsites.net/api/vinebeerapi");
     if(response.status === 200) {
       setVineBeer(response.data);
     }
   };
 
   const getDrinks = async () => {
-    const response = await axios.get("/api/drinkapi");
+    const response = await axios.get("https://admingottugg.azurewebsites.net/api/drinkapi");
     if(response.status === 200) {
       setDrink(response.data);
     }
@@ -41,11 +41,9 @@ const DrinkMenu = () => {
         <div className="Menu-wine">
           <p className='Menu-heading'>Vin & Öl</p>
           <div className="Menu-items">
-            {vineBeer && vineBeer.map((item) => {
-              return (
+            {vineBeer.map((item) => (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-              )
-              })}
+                ))}
           </div>
         </div>
                 
@@ -56,11 +54,9 @@ const DrinkMenu = () => {
         <div className="Menu-cocktails">
           <p className='Menu-heading'>Cocktails</p>
           <div className="Menu-items">
-          {drink && drink.map((item) => {
-              return (
+          {drink.map((item) => (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-              )
-              })}
+                ))}
           </div>
         </div>
 
