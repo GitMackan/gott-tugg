@@ -43,11 +43,11 @@ const DrinkMenu = () => {
         <div className="Menu-wine">
           <p className='Menu-heading'>Vin & Öl</p>
           <div className="Menu-items">
-            {/*vineBeer && vineBeer.map((item) => {
+            {vineBeer && vineBeer.map((item) => {
               return (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
               )
-              })*/}
+              })}
           </div>
         </div>
                 
