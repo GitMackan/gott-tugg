@@ -17,14 +17,14 @@ const DessertMenu = () => {
   }, [])
 
   const getDesserts = async () => {
-    const response = await axios.get("/api/dessertapi");
+    const response = await axios.get("https://admingottugg.azurewebsites.net/api/dessertapi");
     if(response.status === 200) {
         setDessert(response.data);
     }
   }; 
 
   const getCoffee = async () => {
-    const response = await axios.get("/api/coffeeapi");
+    const response = await axios.get("https://admingottugg.azurewebsites.net/api/coffeeapi");
     if(response.status === 200) {
         setCoffee(response.data);
     }
@@ -41,9 +41,11 @@ const DessertMenu = () => {
       <div className="Menu-wine">
         <p className='Menu-heading'>Kaffe</p>
         <div className="Menu-items">
-        {Coffee.map((item) => (
+        {Coffee && Coffee.map((item) => {
+              return (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-                ))}
+              )
+              })}
         </div>
       </div>
 
@@ -54,9 +56,11 @@ const DessertMenu = () => {
       <div className="Menu-cocktails">
         <p className='Menu-heading'>Efterrätter</p>
         <div className="Menu-items">
-        {Dessert.map((item) => (
+        {Dessert && Dessert.map((item) => {
+              return (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-                ))}
+              )
+              })}
         </div>
       </div>
 

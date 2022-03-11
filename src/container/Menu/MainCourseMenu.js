@@ -17,14 +17,14 @@ const MainCourseMenu = () => {
   }, [])
 
   const getMainCourses = async () => {
-    const response = await axios.get("/api/maincourseapi");
+    const response = await axios.get("https://admingottugg.azurewebsites.net/api/maincourseapi");
     if(response.status === 200) {
       setMainCourse(response.data);
     }
   }; 
 
   const getMainCoursesVeg = async () => {
-    const response = await axios.get("/api/maincoursevegapi");
+    const response = await axios.get("https://admingottugg.azurewebsites.net/api/maincoursevegapi");
     if(response.status === 200) {
       setMainCourseVeg(response.data);
     }
@@ -41,9 +41,11 @@ const MainCourseMenu = () => {
       <div className="Menu-wine">
         <p className='Menu-heading'>Kött & Fisk</p>
         <div className="Menu-items">
-        {mainCourse.map((item) => (
+        {mainCourse && mainCourse.map((item) => {
+              return (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-                ))}
+              )
+              })}
         </div>
       </div>
 
@@ -54,9 +56,11 @@ const MainCourseMenu = () => {
       <div className="Menu-cocktails">
         <p className='Menu-heading'>Vegetarisk</p>
         <div className="Menu-items">
-        {mainCourseVeg.map((item) => (
+        {mainCourseVeg && mainCourseVeg.map((item) => {
+              return (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-                ))}
+              )
+              })}
         </div>
       </div>
 

@@ -20,15 +20,13 @@ const DrinkMenu = () => {
     const response = await axios.get("https://admingottugg.azurewebsites.net/api/vinebeerapi");
     if(response.status === 200) {
       setVineBeer(response.data);
-      console.log(vineBeer);
     }
   };
   
   const getDrinks = async () => {
-    const response = await axios.get("https://dt162g-test.herokuapp.com/movies");
+    const response = await axios.get("https://admingottugg.azurewebsites.net/api/drinkapi");
     if(response.status === 200) {
       setDrink(response.data);
-      console.log(drink);
     }
   };
 
@@ -60,7 +58,7 @@ const DrinkMenu = () => {
           <div className="Menu-items">
           {drink && drink.map((item) => {
               return (
-                <MenuItem key={item._id} name={item.title} ingredients={item.director} price={item.year} />
+                <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
               )
               })}
           </div>
