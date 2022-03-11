@@ -20,13 +20,15 @@ const DrinkMenu = () => {
     const response = await axios.get("/api/vinebeerapi");
     if(response.status === 200) {
       setVineBeer(response.data);
+      console.log(vineBeer);
     }
   };
   
   const getDrinks = async () => {
-    const response = await axios.get("/api/drinkapi");
+    const response = await axios.get("https://dt162g-test.herokuapp.com/movies");
     if(response.status === 200) {
       setDrink(response.data);
+      console.log(drink);
     }
   };
 
@@ -41,18 +43,11 @@ const DrinkMenu = () => {
         <div className="Menu-wine">
           <p className='Menu-heading'>Vin & Öl</p>
           <div className="Menu-items">
-            {/*vineBeer.map((item) => (
+            {/*vineBeer && vineBeer.map((item) => {
+              return (
                 <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-            ))*/}
-            {drink.map((item) => {
-                        return (
-                            <div key={item.id}>
-                                <p>{item.name}</p>
-                                <p>{item.ingredients}</p>
-                                <p>{item.price}</p>
-                            </div>
-                        );
-                    })}
+              )
+              })*/}
           </div>
         </div>
                 
@@ -63,9 +58,11 @@ const DrinkMenu = () => {
         <div className="Menu-cocktails">
           <p className='Menu-heading'>Cocktails</p>
           <div className="Menu-items">
-          {/*drink.map((item) => (
-                <MenuItem key={item.id} name={item.name} ingredients={item.ingredients} price={item.price} />
-          ))*/}
+          {drink && drink.map((item) => {
+              return (
+                <MenuItem key={item._id} name={item.title} ingredients={item.director} price={item.year} />
+              )
+              })}
           </div>
         </div>
 
