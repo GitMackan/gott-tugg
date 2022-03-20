@@ -32,7 +32,7 @@
 .menuitem-dash {
     width: 90px;
     height: 1px;
-    background: var(--color-golden);
+    background: rgb(211, 208, 177);
     margin: 0 1rem;
 }
 
@@ -45,7 +45,7 @@
 .menuitem-price p,
 .menuitem-name p {
     font-family: 'Playfair Display', serif;
-    color: rgb(220, 202, 135);
+    color: rgb(211, 208, 177);
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: capitalize;

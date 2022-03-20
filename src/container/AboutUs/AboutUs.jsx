@@ -27,7 +27,7 @@ const AboutUs = () => (
                 <img src={images.history} alt=""></img>
             </div>
             <div className='time-right'>
-                <h3>Vår historia</h3>
+                <h2>Vår historia</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt a illo magni iste. Minima reprehenderit ipsam earum esse, similique ipsa distinctio labore? Vitae neque molestias ipsum in, aut repellat aperiam magni excepturi aspernatur explicabo dignissimos hic quas recusandae doloribus ullam perferendis, dicta nihil non totam veritatis amet natus temporibus numquam. Amet voluptas quidem, nostrum eius voluptatum assumenda quo perspiciatis animi earum laboriosam neque officiis quas. Repudiandae modi dicta odit aliquam molestiae cupiditate voluptate voluptatibus nobis deleniti. Alias, repellat dolor.</p>
             </div>
         </section>

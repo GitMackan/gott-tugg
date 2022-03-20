@@ -1,21 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
 import { MenuItem } from '../../components'
 import { images } from '../../constants'
 import './DrinkMenu.css';
 
-
-
 const StarterMenu = () => {
   const [starter, setStarter] = useState([]);
   const [appetizer, setAppetizer] = useState([]);
-
+  
+  // Run functions
   useEffect(() => {
     getStarters();
     getAppetizer();
   }, [])
 
+  // Get-request to fetch Apppetizers from API
   const getAppetizer = async () => {
     const response = await axios.get("https://admingottugg.azurewebsites.net/api/appetizerapi");
     if(response.status === 200) {
@@ -23,6 +22,7 @@ const StarterMenu = () => {
     }
   }; 
 
+  // Get-request to fetch Starters from API
   const getStarters = async () => {
     const response = await axios.get("https://admingottugg.azurewebsites.net/api/starterapi");
     if(response.status === 200) {
@@ -63,12 +63,6 @@ const StarterMenu = () => {
               })}
         </div>
       </div>
-
-
-    </div>
-
-    <div style={{ marginTop: '15px' }}>
-      <button type='button' className='menuBtn'>View More</button>
     </div>
   </div>
 )

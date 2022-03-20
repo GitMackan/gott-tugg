@@ -1,21 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
 import { MenuItem } from '../../components'
 import { images } from '../../constants'
 import './DrinkMenu.css';
-
-
 
 const MainCourseMenu = () => {
   const [mainCourse, setMainCourse] = useState([]);
   const [mainCourseVeg, setMainCourseVeg] = useState([]);
 
+  // Run functions
   useEffect(() => {
     getMainCourses();
     getMainCoursesVeg();
   }, [])
 
+  // Get-request to fetch main courses from API
   const getMainCourses = async () => {
     const response = await axios.get("https://admingottugg.azurewebsites.net/api/maincourseapi");
     if(response.status === 200) {
@@ -23,6 +22,7 @@ const MainCourseMenu = () => {
     }
   }; 
 
+  // Get-request to fetch Vegetarian courses from API
   const getMainCoursesVeg = async () => {
     const response = await axios.get("https://admingottugg.azurewebsites.net/api/maincoursevegapi");
     if(response.status === 200) {
@@ -65,10 +65,6 @@ const MainCourseMenu = () => {
       </div>
 
 
-    </div>
-
-    <div style={{ marginTop: '15px' }}>
-      <button type='button' className='menuBtn'>View More</button>
     </div>
   </div>
 )

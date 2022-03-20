@@ -1,21 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
 import { MenuItem } from '../../components'
 import { images } from '../../constants'
 import './DrinkMenu.css';
-
-
 
 const DessertMenu = () => {
   const [Dessert, setDessert] = useState([]);
   const [Coffee, setCoffee] = useState([]);
 
+  // Run functions 
   useEffect(() => {
     getDesserts();
     getCoffee();
   }, [])
 
+  // Get-request to fetch Desserts from API
   const getDesserts = async () => {
     const response = await axios.get("https://admingottugg.azurewebsites.net/api/dessertapi");
     if(response.status === 200) {
@@ -23,6 +22,7 @@ const DessertMenu = () => {
     }
   }; 
 
+  // Get-request to fetch Coffees from API
   const getCoffee = async () => {
     const response = await axios.get("https://admingottugg.azurewebsites.net/api/coffeeapi");
     if(response.status === 200) {
@@ -65,10 +65,6 @@ const DessertMenu = () => {
       </div>
 
 
-    </div>
-
-    <div style={{ marginTop: '15px' }}>
-      <button type='button' className='menuBtn'>View More</button>
     </div>
   </div>
 )

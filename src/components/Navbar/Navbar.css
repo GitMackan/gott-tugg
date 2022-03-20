@@ -24,6 +24,10 @@
     text-decoration: underline;
 }
 
+.logo a {
+    color: #03000a;
+}
+
 .navbar-links {
     flex: 1;
     display: flex;
@@ -47,7 +51,7 @@
 }
 
 .navbar-links li a {
-    color: black;
+    color: #03000a;
     font-family: 'Playfair Display', serif;
 }
 

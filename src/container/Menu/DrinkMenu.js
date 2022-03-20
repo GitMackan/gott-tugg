@@ -1,21 +1,21 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-
 import { MenuItem } from '../../components'
 import { images } from '../../constants'
 import './DrinkMenu.css';
 
 const DrinkMenu = () => {
-
   
   const [drink, setDrink] = useState([]);
   const [vineBeer, setVineBeer] = useState([]);
 
+  // Run functions
   useEffect(() => {
     getDrinks();
     getVineBeer();
   }, [])
   
+  // Get-request to fetch Vine and Beers from API
   const getVineBeer = async () => {
     const response = await axios.get("https://admingottugg.azurewebsites.net/api/vinebeerapi");
     if(response.status === 200) {
@@ -23,6 +23,7 @@ const DrinkMenu = () => {
     }
   };
   
+  // Get-request to fetch Drinks from API
   const getDrinks = async () => {
     const response = await axios.get("https://admingottugg.azurewebsites.net/api/drinkapi");
     if(response.status === 200) {
@@ -63,12 +64,6 @@ const DrinkMenu = () => {
               })}
           </div>
         </div>
-
-
-      </div>
-
-      <div style={{ marginTop: '15px' }}>
-        <button type='button' className='menuBtn'>View More</button>
       </div>
     </div>
   )
